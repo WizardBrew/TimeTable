@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Housewife Daily Timetable</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h2>Interactive Housewife Daily Timetable</h2>
+    <table id="timetable">
+        <thead>
+            <tr>
+                <th>From</th>
+                <th>To</th>
+                <th>Duration</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Morning Tasks -->
+            <tr class="prayer-row" draggable="true" data-duration="15">
+                <td>
+                    <span>5:30 AM</span>
+                    <button onclick="setAlarm('5:30 AM','Fajr Prayer')">⏰</button>
+                </td>
+                <td>5:45 AM</td>
+                <td>15 min</td>
+                <td class="prayer-column">Fajr Prayer</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="30">
+                <td>
+                    <span>5:45 AM</span>
+                    <button onclick="setAlarm('5:45 AM','Morning Walk & Exercise')">⏰</button>
+                </td>
+                <td>6:15 AM</td>
+                <td>30 min</td>
+                <td>Morning Walk & Exercise</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="90">
+                <td>
+                    <span>6:15 AM</span>
+                    <button onclick="setAlarm('6:15 AM','Preparing Breakfast & Lunch')">⏰</button>
+                </td>
+                <td>7:45 AM</td>
+                <td>1.5 hours</td>
+                <td>Preparing Breakfast & Lunch</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="60">
+                <td>
+                    <span>7:45 AM</span>
+                    <button onclick="setAlarm('7:45 AM','Family Breakfast & Relaxation')">⏰</button>
+                </td>
+                <td>8:45 AM</td>
+                <td>1 hour</td>
+                <td>Family Breakfast & Relaxation</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <!-- Midday and Afternoon Tasks -->
+            <tr draggable="true" data-duration="90">
+                <td>
+                    <span>8:45 AM</span>
+                    <button onclick="setAlarm('8:45 AM','Cleaning & Tidying')">⏰</button>
+                </td>
+                <td>10:15 AM</td>
+                <td>1.5 hours</td>
+                <td>Cleaning & Tidying</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="120">
+                <td>
+                    <span>10:15 AM</span>
+                    <button onclick="setAlarm('10:15 AM','Baby Sitting & Playtime')">⏰</button>
+                </td>
+                <td>12:15 PM</td>
+                <td>2 hours</td>
+                <td>Baby Sitting & Playtime</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="75">
+                <td>
+                    <span>12:15 PM</span>
+                    <button onclick="setAlarm('12:15 PM','Lunch & Kitchen Cleanup')">⏰</button>
+                </td>
+                <td>1:30 PM</td>
+                <td>1 hr 15 min</td>
+                <td>Lunch & Kitchen Cleanup</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr class="prayer-row" draggable="true" data-duration="15">
+                <td>
+                    <span>1:30 PM</span>
+                    <button onclick="setAlarm('1:30 PM','Dhuhr Prayer')">⏰</button>
+                </td>
+                <td>1:45 PM</td>
+                <td>15 min</td>
+                <td class="prayer-column">Dhuhr Prayer</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="180">
+                <td>
+                    <span>1:45 PM</span>
+                    <button onclick="setAlarm('1:45 PM','Afternoon Rest')">⏰</button>
+                </td>
+                <td>4:45 PM</td>
+                <td>3 hours</td>
+                <td>Afternoon Rest</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr class="prayer-row" draggable="true" data-duration="15">
+                <td>
+                    <span>4:45 PM</span>
+                    <button onclick="setAlarm('4:45 PM','Asr Prayer')">⏰</button>
+                </td>
+                <td>5:00 PM</td>
+                <td>15 min</td>
+                <td class="prayer-column">Asr Prayer</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="60">
+                <td>
+                    <span>5:00 PM</span>
+                    <button onclick="setAlarm('5:00 PM','Leisure & Baby Sitting')">⏰</button>
+                </td>
+                <td>6:00 PM</td>
+                <td>1 hour</td>
+                <td>Leisure & Baby Sitting</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr draggable="true" data-duration="75">
+                <td>
+                    <span>6:00 PM</span>
+                    <button onclick="setAlarm('6:00 PM','Evening Household Tasks')">⏰</button>
+                </td>
+                <td>7:15 PM</td>
+                <td>1 hr 15 min</td>
+                <td>Evening Household Tasks</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <tr class="prayer-row" draggable="true" data-duration="15">
+                <td>
+                    <span>7:15 PM</span>
+                    <button onclick="setAlarm('7:15 PM','Maghrib Prayer')">⏰</button>
+                </td>
+                <td>7:30 PM</td>
+                <td>15 min</td>
+                <td class="prayer-column">Maghrib Prayer</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <!-- Evening Relaxation row adjusted: now from 7:30 PM to 8:30 PM -->
+            <tr draggable="true" data-duration="60">
+                <td>
+                    <span>7:30 PM</span>
+                    <button onclick="setAlarm('7:30 PM','Family Relaxation & Personal Time')">⏰</button>
+                </td>
+                <td>8:30 PM</td>
+                <td>1 hour</td>
+                <td>Family Relaxation & Personal Time</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <!-- Fixed Isha row inserted here -->
+            <tr class="fixed-row" data-duration="15">
+                <td>
+                    <span>8:30 PM</span>
+                    <button onclick="setAlarm('8:30 PM','Isha Prayer')" disabled>⏰</button>
+                </td>
+                <td>8:45 PM</td>
+                <td>15 min</td>
+                <td>Isha Prayer</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+            <!-- Fixed Sleep row -->
+            <tr data-duration="480">
+                <td>
+                    <span>10:30 PM</span>
+                    <button onclick="setAlarm('10:30 PM','Sleep')">⏰</button>
+                </td>
+                <td>5:30 AM</td>
+                <td>8 hours</td>
+                <td>Sleep</td>
+                <td class="status-icon" onclick="toggleStatus(this)">🔴</td>
+                <td><input type="text" class="task-remark" placeholder="Add remark..."></td>
+            </tr>
+        </tbody>
+    </table>
+    <script src="script.js"></script>
+</body>
+
+</html>
