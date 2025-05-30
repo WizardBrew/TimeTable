@@ -58,4 +58,4 @@ Welcome to the **Interactive Housewife Daily Timetable** project! This is a dyna
 1. **Clone or Download the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/interactive-timetable.git
+   git clone https://github.com/WizardBrew/TimeTable.git
