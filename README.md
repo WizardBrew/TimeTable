@@ -1,4 +1,4 @@
-# 🌟 Interactive Muslim Housewife Daily Timetable 🌟
+# 🌟 Interactive Muslim Housewife Prayer Daily Timetable 🌟
 
 Welcome to the **Interactive Housewife Daily Timetable** project! This is a dynamic, web-based scheduling tool built with HTML, CSS, and JavaScript. It lets you easily manage your daily tasks using interactive drag-and-drop features, alarms, and automatic time adjustments. Whether it's prayer times or everyday activities, this timetable keeps everything in order with a modern, attractive design. 🚀
 
